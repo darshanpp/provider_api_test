@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:webelight_assignment/constants/string_constants.dart';
 import 'package:webelight_assignment/modules/vehicle/vehicle_dm.dart';
 import 'package:webelight_assignment/modules/vehicle/vehicle_provider.dart';
 import 'package:webelight_assignment/modules/vehiecle_detail/vehicle_detail_screen.dart';
@@ -29,7 +31,7 @@ class _VehicleListingScreenState extends State<VehicleListingScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Vehicles'),
+        title: Text(StringConstants.vehicles),
       ),
       body: vehicleModel.vehicleList.isNotEmpty
           ? ListView.builder(
@@ -61,8 +63,8 @@ class _VehicleListingScreenState extends State<VehicleListingScreen> {
                   },
                 );
               })
-          : const Center(
-              child: Text('There\'s no Vehicles'),
+          :  Center(
+              child: Text(StringConstants.noVehicles),
             ),
     );
   }
